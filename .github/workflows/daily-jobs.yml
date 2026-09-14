@@ -1,0 +1,40 @@
+name: Daily Job Emails to Telegram
+
+on:
+  schedule:
+    # IST = UTC + 5:30
+    # 8:00 AM IST  = 02:30 UTC
+    - cron: '30 2 * * *'
+    # 12:00 PM IST = 06:30 UTC
+    - cron: '30 6 * * *'
+    # 4:00 PM IST  = 10:30 UTC
+    - cron: '30 10 * * *'
+    # 8:00 PM IST  = 14:30 UTC
+    - cron: '30 14 * * *'
+
+  workflow_dispatch:  # Manual trigger from GitHub UI
+
+jobs:
+  fetch-and-send:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Fetch job emails & send to Telegram
+        env:
+          COMPOSIO_API_KEY: ${{ secrets.COMPOSIO_API_KEY }}
+          COMPOSIO_ACCOUNT_ID: ${{ secrets.COMPOSIO_ACCOUNT_ID }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python gmail_job.py
