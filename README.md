@@ -609,10 +609,10 @@ Secrets store your API keys safely. GitHub hides them — nobody can see them af
 cd ~/Desktop/gmail-job-bot
 
 # Add all 4 secrets at once
-gh secret set COMPOSIO_API_KEY --body "ak_itWxsvJnhuXov_Xp7xsr"
-gh secret set COMPOSIO_ACCOUNT_ID --body "ca_SaF5isUHhqP7"
-gh secret set TELEGRAM_BOT_TOKEN --body "8807057652:AAECM3FnuCEhqL6rnKjirljTFNbGKsRWzK0"
-gh secret set TELEGRAM_CHAT_ID --body "839957465"
+gh secret set COMPOSIO_API_KEY --body "YOUR_COMPOSIO_API_KEY"
+gh secret set COMPOSIO_ACCOUNT_ID --body "YOUR_COMPOSIO_ACCOUNT_ID"
+gh secret set TELEGRAM_BOT_TOKEN --body "YOUR_TELEGRAM_BOT_TOKEN"
+gh secret set TELEGRAM_CHAT_ID --body "YOUR_TELEGRAM_CHAT_ID"
 
 # Verify secrets were added
 gh secret list
@@ -654,7 +654,7 @@ TELEGRAM_CHAT_ID       2026-09-14T09:37:09Z
 │  5. Fill in:                                                    │
 │     ┌─────────────────────────────────────────────┐             │
 │     │ Name:    COMPOSIO_API_KEY                   │             │
-│     │ Value:   ak_itWxsvJnhuXov_Xp7xsr            │             │
+│     │ Value:   YOUR_COMPOSIO_API_KEY                  │             │
 │     └─────────────────────────────────────────────┘             │
 │                                                                 │
 │  6. Click "Add secret"                                          │
@@ -694,15 +694,15 @@ TELEGRAM_CHAT_ID       2026-09-14T09:37:09Z
    ```
    ┌─────────────────────────────────────────────────────────────┐
    │  Name: COMPOSIO_API_KEY                                     │
-   │  Value: ak_itWxsvJnhuXov_Xp7xsr                             │
+   │  Value: YOUR_COMPOSIO_API_KEY                             │
    │                                                             │
    │  [Add secret]                                               │
    └─────────────────────────────────────────────────────────────┘
    
    Repeat for:
-   - COMPOSIO_ACCOUNT_ID → ca_SaF5isUHhqP7
-   - TELEGRAM_BOT_TOKEN → 8807057652:AAECM3FnuCEhqL6rnKjirljTFNbGKsRWzK0
-   - TELEGRAM_CHAT_ID → 839957465
+   - COMPOSIO_ACCOUNT_ID → YOUR_COMPOSIO_ACCOUNT_ID
+   - TELEGRAM_BOT_TOKEN → YOUR_TELEGRAM_BOT_TOKEN
+   - TELEGRAM_CHAT_ID → YOUR_TELEGRAM_CHAT_ID
    ```
 
 ---
